@@ -1,22 +1,22 @@
 # Structure of this repository
 ## Dataset information:
-benchmark_image_list.csv   --> contains the full dataset of publicly available container images at the time of collection
-image_metadata_dataset_750.csv  --> contains the metadata for the full dataset: name, layer count,the original and balanced compressed sizes in bytes
-image_metadata_subset_100.csv  --> contains the metadata for the subset: name, the original, the balanced, the flattened and the skewed compressed sizes in bytes
+`benchmark_image_list.csv`   --> contains the full dataset of publicly available container images at the time of collection
+`image_metadata_dataset_750.csv`  --> contains the metadata for the full dataset: name, layer count, the original and balanced compressed sizes in bytes <br>
+`image_metadata_subset_100.csv`  --> contains the metadata for the subset: name, the original, the balanced, the flattened and the skewed compressed sizes in bytes
 
 
 ## Experiment 1 results for full dataset
-pull_benchmark_results_balanced.csv  --> raw pull duration results in seconds for original vs balanced
-median_avg_perf_per_image.csv  --> mean, median pull times, improvement percent for mean and median, and standard deviation for original and balanced
+`pull_benchmark_results_balanced.csv`  --> raw pull duration results in seconds for original vs balanced <br>
+`median_avg_perf_per_image.csv`  --> mean, median pull times, improvement percent for mean and median, and standard deviation for original and balanced
 
 
 ## Experiment 2 results for subset
-pull_benchmark_results_balanced_flattened_skewed.csv  --> raw pull duration results in seconds for original vs balanced vs flattened vs skewed
-median_avg_perf_per_image_subset.csv  --> mean, median pull times, improvement percent for mean and median, and standard deviation for original, balanced, flattened, skewed
+`pull_benchmark_results_balanced_flattened_skewed.csv`  --> raw pull duration results in seconds for original vs balanced vs flattened vs skewed <br>
+`median_avg_perf_per_image_subset.csv`  --> mean, median pull times, improvement percent for mean and median, and standard deviation for original, balanced, flattened, skewed
 
 ## Scripts
-The scripts are numbered to be executed in order.
-The scripts representing steps from 1 to 9 are used to collect the dataset elements
+The scripts are numbered to be executed in order. <br>
+The scripts representing steps from 1 to 9 are used to collect the dataset elements. <br>
 The scripts for steps 10 and 11 are used for creating the new image variations and running the container image pull test iterations.
 
 
@@ -116,4 +116,4 @@ done
 ```
 
 This builds and pushes missing adaptive variants without running the benchmark. The same can be done for other variants as well.
-The adaptive variant corresponds to the balanced variant where layers sizes are balanced according to total image size. The output csv files will have adaptive printed instead of balanced due to the script parameters.
+The adaptive variant corresponds to the balanced variant where layers sizes are balanced according to total image size, thus the output files will have adaptive printed instead of balanced.
